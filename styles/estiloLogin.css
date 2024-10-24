@@ -1,0 +1,115 @@
+/* Gerais */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@font-face {
+    font-family: 'Ringbearer';
+    src: url('../fonts/RINGM___.TTF');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bilbo&display=swap');
+
+/* Banner */
+
+.banner {
+    background-image: url('../img/imgLogin.png');
+    background-size: cover;
+    width: 40%;
+    height: 95vh;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.banner p {
+    width: 90%;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Bilbo';
+    font-size: 30px;
+    color: #3C4D21;
+}
+
+/* Login */
+
+.login {
+    font-family: 'Poppins';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    font-size: 30px;
+}
+
+.login h2 {
+    font-family: 'Ringbearer';
+    color: #FFCC00;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.login a {
+    text-decoration: none;
+    color: #FFCC00;
+}
+
+.login a:hover {
+    color: #BF7E24;
+}
+
+.login form {
+    margin-top: 10px;
+}
+
+.login form p {
+    font-size: 25px;
+    color: grey;
+}
+
+.login form img {
+    margin-right: 10px;
+}
+
+.login .iptEmailSenha {
+    width: 600px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+}
+
+.login form span {
+    font-size: 20px;
+}
+
+.login form span a{
+    margin-left: 350px;
+}
+
+.login button {
+    width: 770px;
+    height: 30px;
+    border-radius: 20px;
+    margin-top: 20px;
+    color: #FFCC00;
+    font-size: 20px;
+    background-color: #3C4D21;
+    border: none;
+}
+
+.login button:hover {
+    background-color: #668139;
+}

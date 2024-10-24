@@ -1,8 +1,6 @@
 /* Gerais */
 
 body {
-    background-image: url('../img/planoDeFundoVerde.jpeg');
-    background-size: cover;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -19,18 +17,19 @@ body {
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto';
 }
 
 /* Header */
 
 header {
+    background-image: url('../img/planoDeFundoVerde.jpeg');
+    background-size: cover;
     color: #FFCC00;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 100px;
+    height: 10vh;
 }
 
 h1 {
@@ -38,83 +37,49 @@ h1 {
     font-family: 'Ringbearer';
 }
 
+header menu {
+    display: flex;
+    font-family: 'Ringbearer';
+}
+
 header ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 header li {
     margin-right: 15px;
 }
 
-/* Section novidades */
+header a {
+    text-decoration: none;
+    color: #FFCC00;
+}
 
-#emAlta {
-    width: 1200px;
-    background-color: white;
-    margin: 20px 0;
-    border-radius: 20px;
+header a:hover{
+    color: #BF7E24;
+}
+
+/* Banner */
+
+.banner img {
+    width: 100vw;
+    height: 100vh;
+}
+
+.banner {
+    width: 100%;
+    height: 90vh;
+    background-image: url('../img/mapaTerraMédia.png');
+    background-size: cover;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#emAlta ul {
-    display: flex;
-    list-style: none;
-    color: #FFCC00;
-    font-size: 20px;
-}
-
-#emAlta ul li {
-    margin: 10px;
-}
-
-#emAlta a {
-    color: #FFCC00;
-    text-decoration: none;
-}
-
-#emAlta a:hover {
-    color: darkgreen;
-    text-decoration: underline;
-}
-
-h2 {
     font-family: 'Ringbearer';
     color: #FFCC00;
-    margin: 10px;
-    font-size: 30px;
+    font-size: 100px;
 }
 
-h3 {
-    font-family: 'Ringbearer';
-    color: #FFCC00;
-    font-size: 25px;
-    margin: 10px;
-}
-
-#jogos {
-    width: 80%;
-    margin-left: 15px;
-}
-
-#jogos div {
-    display: flex;
-    border: none;
-    padding-bottom: 8px;
-    border-bottom: solid darkgreen 2px;
-    margin-bottom: 10px;
-}
-
-#jogos div img {
-    width: 150px;
-    height: 100px;
-    border-color: darkgreen;
-    border-style: solid;
-    border-radius: 10px;
-    margin-right: 10px;
-}
+/*  */
