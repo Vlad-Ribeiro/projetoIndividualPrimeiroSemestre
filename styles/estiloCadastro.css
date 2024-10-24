@@ -1,0 +1,109 @@
+/* Gerais */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@font-face {
+    font-family: 'Ringbearer';
+    src: url('../fonts/RINGM___.TTF');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bilbo&display=swap');
+
+/* Banner */
+
+.banner {
+    background-image: url('../img/imgCadastro.png');
+    background-size: cover;
+    width: 40%;
+    height: 95vh;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.banner p {
+    width: 90%;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Bilbo';
+    font-size: 30px;
+    color: #3C4D21;
+}
+
+/* Login */
+
+.cadastro {
+    font-family: 'Poppins';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    font-size: 30px;
+}
+
+.cadastro h2 {
+    font-family: 'Ringbearer';
+    color: #FFCC00;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.cadastro a {
+    text-decoration: none;
+    color: #FFCC00;
+}
+
+.cadastro a:hover {
+    color: #BF7E24;
+}
+
+.cadastro form {
+    margin-top: 10px;
+}
+
+.cadastro form p {
+    font-size: 25px;
+    color: grey;
+    margin-top: 10px;
+}
+
+.cadastro form img {
+    margin-right: 10px;
+}
+
+.cadastro .iptInfo {
+    width: 600px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+}
+
+.cadastro button {
+    width: 770px;
+    height: 30px;
+    border-radius: 20px;
+    margin-top: 20px;
+    color: #FFCC00;
+    font-size: 20px;
+    background-color: #3C4D21;
+    border: none;
+}
+
+.cadastro button:hover {
+    background-color: #668139;
+    cursor: pointer;
+}

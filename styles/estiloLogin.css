@@ -78,6 +78,7 @@ body {
 .login form p {
     font-size: 25px;
     color: grey;
+    margin-top: 10px;
 }
 
 .login form img {
@@ -112,4 +113,5 @@ body {
 
 .login button:hover {
     background-color: #668139;
+    cursor: pointer;
 }
