@@ -4,29 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro | Terra Média</title>
+
     <link rel="stylesheet" href="../styles/estiloCadastro.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bilbo&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" type="imagex/png" href="../img/imgSimbolo.ico">
 </head>
 <body>
+    <a href="../index.html"><img src="../img/imgSimbolo.png" alt="simbolo da página" class="icon"></a>
     <section class="cadastro">
         <h2>Nova conta</h2>
         <p>Já possuí uma conta? Faça <a href="./login.html"><b>login aqui!</b></a></p>
         <form>
             <p>E-mail:</p>
-            <img src="../img/iconeEmailLogin.png" alt=""><input type="email" id="iptEmail" class="iptInfo" placeholder="Digite seu melhor e-mail" required> <hr>
-            <p>Nome:</p>
-            <img src="../img/iconePerfilCadastro.png" alt=""><input type="text" id="iptNome" class="iptInfo" placeholder="Digite seu nome" required> <hr>
+            <img src="../img/iconeEmailLogin.png" alt=""><input type="email" id="iptEmail" class="iptInfo" placeholder="Digite seu melhor e-mail" required> <hr> <div id="divEmail" class="validacao"></div>
+            <p>Usuário:</p>
+            <img src="../img/iconePerfilCadastro.png" alt=""><input type="text" id="iptUsuario" class="iptInfo" placeholder="Digite seu usuário" required> <hr> <div id="divUsuario" class="validacao"></div>
             <p>Senha:</p>
-            <img src="../img/iconeSenhaLogin.png" alt=""><input type="password" id="iptSenha" class="iptInfo" placeholder="Digite sua senha" required> <hr>
+            <img src="../img/iconeSenhaLogin.png" alt=""><input type="password" id="iptSenha" class="iptInfo" placeholder="Digite sua senha" required> <hr> <div id="divSenha" class="validacao"></div>
             <p>Confirme a senha:</p>
-            <img src="../img/iconeSenhaLogin.png" alt=""><input type="password" id="iptSenha2" class="iptInfo" placeholder="Redigite sua senha" required> <hr>
-            <button type="button">Ingressar na Sociedade</button>
+            <img src="../img/iconeSenhaLogin.png" alt=""><input type="password" id="iptSenha2" class="iptInfo" placeholder="Redigite sua senha" required> <hr> <div id="divSenha2" class="validacao"></div>
+            <button type="button" onclick="validarCadastro()">Ingressar na Sociedade</button>
         </form>
     </section>
     <section class="banner">
-        <p>As portas de Durin, Senhor de Moria <br> - Narvi e Celebrimbor</p>
+        <p>É um negócio perigoso, Frodo, sair da sua porta. Você pisa na estrada, e, se não controlar seus pés, não há como saber até onde você pode ser levado. <br> - Bilbo Bolseiro</p>
     </section>
 </body>
 </html>
+<script>
+    function validarCadastro() {
+        var email = iptEmail.value
+        var usuario = iptUsuario.value
+        var senha = iptSenha.value
+        var senha2 = iptSenha2.value
+
+        var mensagemEmail = ``
+        var mensagemUsuario = ``
+        var mensagemSenha = ``
+        var mensagemSenha2 = ``
+
+        if (usuario == '') {
+            mensagemUsuario = `*Informe um nome de usuário.*`
+        } else if (usuario.length < 4 ) {
+            mensagemUsuario = `*Informe um nome de usuário com no mínimo 4 letras.*`
+        }
+
+        var caracteresEspeciais = ['!', '@', '#', '$', '%', '&', '*', '-', '_', '+', '=', '|', '/']
+        var especialSenha = false
+
+        for (i = 0; i <= caracteresEspeciais.length - 1; i++) {
+            if (senha.includes(caracteresEspeciais[i])) {
+                especialSenha = true
+                break
+            }
+        }
+
+        var minusculaSenha = senha.toLowerCase() 
+        var maiusculaSenha = senha.toUpperCase()
+
+        if (senha.length < 8) {
+            mensagemSenha += `*A senha deve possuir no mínimo 8 caracteres.*`
+        } else if (senha == maiusculaSenha) {
+            mensagemSenha += `*Necessário letra minúscula.*`
+        } else if (senha == minusculaSenha) {
+            mensagemSenha += `*Necessário letra maiúscula.*`
+        } else if (especialSenha == false) {
+            mensagemSenha += `*Necessário ao menos um caracter especial.*`
+        }
+
+        if (senha !== senha2) {
+            mensagemSenha2 += `*Senha incorreta! Deve ser igual a senha do campo superior.*`
+        }
+
+        divSenha.innerHTML = mensagemSenha
+        divSenha2.innerHTML = mensagemSenha2
+        divUsuario.innerHTML = mensagemUsuario
+    }
+</script>
