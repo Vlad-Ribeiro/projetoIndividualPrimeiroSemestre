@@ -115,3 +115,9 @@ body {
     background-color: #668139;
     cursor: pointer;
 }
+
+#divMensagem {
+    color: red;
+    font-size: 15px;
+    margin-top: 20px;
+}

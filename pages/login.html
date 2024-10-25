@@ -28,8 +28,29 @@
             <hr>
             <span><input type="checkbox" id="lembreDeMim"> Lembre de mim</span> 
             <span><a href="#">Esqueceu a senha?</a></span> <br>
-            <button>Fale Amigo e Entre</button>
+            <button onclick="validarLogin()" type="button">Fala, Amigo, e Entra</button>
         </form>
+        <div id="divMensagem"></div>
     </section>
+    <audio src="../audio/gandalf_shallnotpass.mp3" id="audioLoginInvalido"></audio>
 </body>
 </html>
+<script>
+    function validarLogin() {
+        var email = iptEmail.value
+        var senha = iptSenha.value
+        var mensagem = ``
+
+        var audioNaoValidado = new Audio()
+        audioNaoValidado.src = '../audio/gandalf_shallnotpass.mp3'
+
+        if (email !== 'vlad@email.com' || senha !== '12345') {
+            audioNaoValidado.play()
+            mensagem = `<p>*Login inválido! Tente Novamente.*</p>`
+        } else {
+            window.location.href = 'perfil.html'
+        }
+
+        divMensagem.innerHTML = mensagem
+    }
+</script>
