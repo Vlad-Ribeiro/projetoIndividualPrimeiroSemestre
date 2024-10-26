@@ -111,6 +111,7 @@ body {
 .cadastro button:hover {
     background-color: #668139;
     cursor: pointer;
+    scale: 1.1;
 }
 
 /* Icone */
@@ -121,6 +122,10 @@ body {
     position: absolute;
     left: 10px;
     top: 10px;
+}
+
+.icon:hover {
+    scale: 1.1;
 }
 
 /* validações */

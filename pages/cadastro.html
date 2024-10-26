@@ -51,10 +51,21 @@
         var mensagemSenha = ``
         var mensagemSenha2 = ``
 
+        var contador = 0
+
+        if (email.includes('@') && (email.endsWith('.com') || email.endsWith('.com.br'))) {
+            mensagemEmail = ``
+        } else {
+            mensagemEmail = `*E-mail inválido! Informe um e-mail com '@' e '.com'*`
+            contador++
+        }
+
         if (usuario == '') {
-            mensagemUsuario = `*Informe um nome de usuário.*`
+            mensagemUsuario = `*Informe um nome de usuário*`
+            contador++
         } else if (usuario.length < 4 ) {
-            mensagemUsuario = `*Informe um nome de usuário com no mínimo 4 letras.*`
+            mensagemUsuario = `*Informe um nome de usuário com no mínimo 4 letras*`
+            contador++
         }
 
         var caracteresEspeciais = ['!', '@', '#', '$', '%', '&', '*', '-', '_', '+', '=', '|', '/']
@@ -71,21 +82,35 @@
         var maiusculaSenha = senha.toUpperCase()
 
         if (senha.length < 8) {
-            mensagemSenha += `*A senha deve possuir no mínimo 8 caracteres.*`
+            mensagemSenha = `*A senha deve possuir no mínimo 8 caracteres*`
+            contador++
         } else if (senha == maiusculaSenha) {
-            mensagemSenha += `*Necessário letra minúscula.*`
+            mensagemSenha = `*Necessário letra minúscula*`
+            contador++
         } else if (senha == minusculaSenha) {
-            mensagemSenha += `*Necessário letra maiúscula.*`
+            mensagemSenha = `*Necessário letra maiúscula*`
+            contador++
         } else if (especialSenha == false) {
-            mensagemSenha += `*Necessário ao menos um caracter especial.*`
+            mensagemSenha = `*Necessário ao menos um caracter especial*`
+            contador++
         }
 
-        if (senha !== senha2) {
-            mensagemSenha2 += `*Senha incorreta! Deve ser igual a senha do campo superior.*`
+        if (senha2 == '') {
+            mensagemSenha2 = `*Confirme a sua senha*`
+            contador++
+        } else if (senha !== senha2) {
+            mensagemSenha2 = `*Senha incorreta! Deve ser igual a senha do campo superior*`
+            contador++
         }
 
+        divEmail.innerHTML = mensagemEmail
         divSenha.innerHTML = mensagemSenha
         divSenha2.innerHTML = mensagemSenha2
         divUsuario.innerHTML = mensagemUsuario
+
+        if (contador == 0) {
+            alert('Cadastro realizado com sucesso!')
+            window.location.href = './login.html'
+        }
     }
 </script>

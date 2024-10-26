@@ -105,6 +105,10 @@ body {
     margin-left: 350px;
 }
 
+.login form span input {
+    cursor: pointer;
+}
+
 .login button {
     width: 770px;
     height: 30px;
@@ -119,7 +123,10 @@ body {
 .login button:hover {
     background-color: #668139;
     cursor: pointer;
+    scale: 1.1;
 }
+
+/* validacao */
 
 #divMensagem {
     color: red;
@@ -135,4 +142,8 @@ body {
     position: absolute;
     right: 10px;
     top: 10px;
+}
+
+.icon:hover {
+    scale: 1.1;
 }
