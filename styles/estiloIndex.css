@@ -82,4 +82,44 @@ header a:hover{
     font-size: 100px;
 }
 
-/*  */
+/* Locais */
+
+.locais {
+    width: 100%;
+    background-image: url('../img/planoDeFundoVerde.jpeg');
+    background-size: cover;
+    font-family: 'Ringbearer';
+    color: #FFCC00;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.locais h2 {
+    margin: 30px;
+    margin-bottom: 10px;
+}
+
+.locais .slider {
+    margin: 0;
+    width: 1350px;
+    height: 700px;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.slides {
+    width: 400%;
+    height: 700px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slideImg {
+    width: 25%;
+    position: relative;
+}
