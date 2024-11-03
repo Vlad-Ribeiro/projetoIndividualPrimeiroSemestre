@@ -17,7 +17,7 @@
         <h1>Terra Média</h1>
         <menu>
             <ul>
-                <li>Locais</li>
+                <li><a href="#locais">Locais</a></li>
                 <li>Raças</li>
                 <li>Personagens</li>
             </ul>
@@ -32,29 +32,67 @@
     <section class="banner">
         <h2>Descubra a Terra Média</h2>
     </section>
-    <section class="locais">
+    <section class="locais" id="locais">
         <h2>Locais</h2>
         <div class="slider">
-            <div class="slides">
-                <input type="radio" name="radioImg" id="radio1">
-                <input type="radio" name="radioImg" id="radio2">
-                <input type="radio" name="radioImg" id="radio3">
-                <input type="radio" name="radioImg" id="radio4">
-
-                <div class="slideImg primeiraImg">
-                    <img src="./img/slideValfenda.png" alt="">
-                </div>
-                <div class="slideImg">
-                    <img src="./img/slideCondado.png" alt="">
-                </div>
-                <div class="slideImg">
-                    <img src="./img/slideErebor.png" alt="">
-                </div>
-                <div class="slideImg">
-                    <img src="./img/slideMinasTirith.png" alt="">
-                </div>
-            </div>
+            <button id="voltar" class="setaEsquerda" onclick="voltar()"><img src="./img/locaisArrow.png" alt=""></button>
+            <ul>
+                <li><img src="./img/slideValfenda.png" alt="" class="imgSlider on"></li>
+                <li><img src="./img/slideCondado.png" alt="" class="imgSlider"></li>
+                <li><img src="./img/slideErebor.png" alt="" class="imgSlider"></li>
+                <li><img src="./img/slideMinasTirith.png" alt="" class="imgSlider"></li>
+            </ul>
+            <button id="avancar" class="setaDireita" onclick="avancar()"><img src="./img/locaisArrow.png" alt=""></button>
         </div>
+    </section>
+    <section class="racas" id="racas">
+        <h2>Raças</h2>
+        
     </section>
 </body>
 </html>
+<script>
+    // Início das funções do slider da seção 'Locais'
+
+    var trocaSlideAudio = new Audio()
+    trocaSlideAudio.src = 'C:/Users/vladg/OneDrive/Área de Trabalho/SPTech/projetoIndividualPrimeiroSemestre/audio/iAbilitiesOpenA.ogg'
+
+    const imgSlider = document.querySelectorAll('.imgSlider')
+
+    var posicaoSlider = 0
+
+    function esconder() {
+        for (i = 0; i < imgSlider.length; i++) {
+            imgSlider[i].classList.remove('on')
+        }
+    }
+
+    function mostrar() {
+        imgSlider[posicaoSlider].classList.add('on')
+    }
+
+
+    function voltar() {
+        esconder()
+        if (posicaoSlider === 0) {
+            posicaoSlider = imgSlider.length - 1
+        } else {
+            posicaoSlider--
+        }
+        mostrar()
+        trocaSlideAudio.play()
+    }
+
+    function avancar() {
+        esconder()
+        if (posicaoSlider === imgSlider.length - 1) {
+            posicaoSlider = 0
+        } else {
+            posicaoSlider++
+        }
+        mostrar()
+        trocaSlideAudio.play()
+    }
+
+    // Final das funções do slider da seção 'Locais'
+</script>
