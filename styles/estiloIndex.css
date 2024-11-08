@@ -62,6 +62,10 @@ header a:hover{
     color: #BF7E24;
 }
 
+header li:hover {
+    scale: 1.1;
+}
+
 /* Banner */
 
 .banner {
@@ -150,3 +154,35 @@ header a:hover{
     opacity: 1;
 }
 
+/* Raças */
+
+.racas {
+    width: 100%;
+    height: 1200px;
+    background-image: url('../img/tolkienSímbolo.jpg');
+    background-size: cover;
+
+}
+
+.racas h2 {
+    margin: 30px;
+    font-family: 'Ringbearer';
+    font-size: 3.5em;
+    color: #FFCC00;
+}
+
+.racas div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.racas .cards img {
+    width: 300px;
+    margin: 50px;
+}
+
+.cards img:hover {
+    scale: 1.5;
+}
