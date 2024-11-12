@@ -202,7 +202,7 @@ header li:hover {
 }
 
 .perso1 {
-    background-color: darkgreen;
+    background-image: url('../img/personagemGimli.png');
 }
 
 .perso1:hover {
@@ -210,7 +210,7 @@ header li:hover {
 }
 
 .perso2 {
-    background-image: url('../img/personagemGandalf.png');
+    background-image: url('../img/personagemAragorn.png');
 }
 
 .perso2:hover {
@@ -226,7 +226,7 @@ header li:hover {
 }
 
 .perso4 {
-    background-image: url('../img/personagemAragorn.png');
+    background-image: url('../img/personagemGandalf.png');
 }
 
 .perso4:hover {
@@ -234,7 +234,7 @@ header li:hover {
 }
 
 .perso5 {
-    background-color: darkred;
+    background-image: url('../img/personagemGollum.png');
 }
 
 .perso5:hover {
@@ -274,15 +274,75 @@ header li:hover {
 
 /* Footer */
 
-.footer {
+footer {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url('../img/planoDeFundoArgonath.png');
 }
 
-.footer .inicio {
+.inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-image: url('../img/planoDeFundoVerde.jpeg');
+    height: 55px;
+}
+
+footer .inicio a{
     font-family: 'Ringbearer';
     font-size: 30px;
+    color: #FFCC00;
+    text-decoration: none;
+}
+
+.inicio p:hover {
+    scale: 1.1;
+}
+
+.inicio a:hover {
+    color: #BF7E24;
+}
+
+footer .navbar {
+    width: 100%;
+    margin: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+}
+
+.navbar a {
+    color: #FFCC00;
+    text-decoration: none;
+}
+
+.navbar li:hover {
+    scale: 1.1;
+}
+
+.navbar a:hover {
+    color: #BF7E24;
+}
+
+footer ul {
+    list-style: none;
+    font-size: 30px;
+}
+
+footer ul li {
+    text-decoration: none;
+}
+
+footer img {
+    height: 300px;
+}
+
+.footerBanner {
+    text-align: center;
+    color: white;
 }
