@@ -186,3 +186,103 @@ header li:hover {
 .cards img:hover {
     scale: 1.5;
 }
+
+
+/* Seção personagens */
+
+.personagens {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.personagens .personagem {
+    height: 100vh;
+    width: 384px;
+}
+
+.perso1 {
+    background-color: darkgreen;
+}
+
+.perso1:hover {
+    scale: 1.1;
+}
+
+.perso2 {
+    background-image: url('../img/personagemGandalf.png');
+}
+
+.perso2:hover {
+    scale: 1.1;
+}
+
+.perso3 {
+    background-image: url('../img/personagemSauron.png');
+}
+
+.perso3:hover {
+    scale: 1.1;
+}
+
+.perso4 {
+    background-image: url('../img/personagemAragorn.png');
+}
+
+.perso4:hover {
+    scale: 1.1;
+}
+
+.perso5 {
+    background-color: darkred;
+}
+
+.perso5:hover {
+    scale: 1.1;
+}
+
+
+/* Seção Sobre mim */
+
+.sobreMim {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/planoDeFundoSauron.png');
+}
+
+.sobreMim h2 {
+    margin: 30px;
+    font-family: 'Ringbearer';
+    font-size: 3.5em;
+    color: #FFCC00;
+}
+
+.sobreMim .conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.sobreMim .conteudo div {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Footer */
+
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .inicio {
+    font-family: 'Ringbearer';
+    font-size: 30px;
+}
