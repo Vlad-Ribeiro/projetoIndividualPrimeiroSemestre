@@ -58,7 +58,7 @@ body {
 }
 
 .menuFixo li {
-    margin: 60px 0px;
+    margin: 45px 0px;
 }
 
 .menuFixo li:hover {
@@ -71,6 +71,22 @@ body {
     color: #FFCC00  ;
 }
 
+
+.menuFixo div button {
+    font-family: 'Ringbearer';
+    font-size: 20px;
+    padding: 10px;
+    background-color: #FFCC00;
+    color: white;
+    border-radius: 15px;
+    border: none;
+}
+
+.menuFixo div button:hover {
+    background-color: #BF7E24;
+    scale: 1.2;
+    cursor: pointer;
+}
 
 /* Main */
 
