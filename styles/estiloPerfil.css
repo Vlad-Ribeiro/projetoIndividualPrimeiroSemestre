@@ -117,3 +117,56 @@ main section {
     border: solid 5px #3C4D21;
     border-radius: 10px;
 }
+
+/* Seção Quiz */
+
+.perguntasRespostas {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pontuacaoEJogo {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+#btnIniciarQuiz {
+    font-family: 'Ringbearer';
+    font-size: 20px;
+    padding: 10px;
+    background-color: #FFCC00;
+    color: white;
+    border-radius: 15px;
+    border: none;
+}
+
+#btnIniciarQuiz:hover {
+    background-color: #BF7E24;
+    scale: 1.2;
+    cursor: pointer;
+}
+
+.flex-colunar {
+    display: flex;
+    flex-direction: column;
+}
+
+.width-fit-content {
+    width: fit-content;
+}
+
+.padding-8 {
+    padding: 8px;
+}
+
+.text-bold {
+    font-weight: bold;
+}
