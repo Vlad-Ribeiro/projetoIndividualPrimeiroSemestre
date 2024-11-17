@@ -170,3 +170,11 @@ main section {
 .text-bold {
     font-weight: bold;
 }
+
+/* Seção Gráficos */
+
+#graficos {
+    display: flex;
+    flex-direction: column;
+}
+
