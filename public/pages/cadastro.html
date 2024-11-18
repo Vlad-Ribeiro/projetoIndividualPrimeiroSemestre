@@ -16,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bilbo&display=swap" rel="stylesheet">
 
     <link rel="shortcut icon" type="imagex/png" href="../img/imgSimbolo.ico">
+
+    <script src="../js/sessao.js"></script>
 </head>
 <body>
     <a href="../index.html"><img src="../img/imgSimbolo.png" alt="simbolo da página" class="icon"></a>
@@ -110,7 +112,40 @@
 
         if (contador == 0) {
             alert('Cadastro realizado com sucesso!')
-            window.location.href = './login.html'
+
+                // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: usuario,
+                emailServer: email,
+                senhaServer: senha
+            }),
+            })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+
+                    window.location.href = './login.html'
+
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+            return false;
         }
     }
 </script>

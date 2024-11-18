@@ -15,6 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bilbo&display=swap" rel="stylesheet">
 
     <link rel="shortcut icon" type="imagex/png" href="../img/imgSimbolo.ico">
+
+    <script src="../js/sessao.js"></script>
 </head>
 <body>
     <section class="banner">
@@ -49,13 +51,51 @@
         var audioNaoValidado = new Audio()
         audioNaoValidado.src = '../audio/gandalf_shallnotpass.mp3'
 
-        if (email !== 'vlad@email.com' || senha !== '12345') {
-            audioNaoValidado.play()
-            mensagem = `<p>*Login inválido! Tente Novamente.*</p>`
-        } else {
-            window.location.href = 'perfil.html'
+        
+        if (email == "" || senha == "") {
+            mensagem = `Insira um login!`
+            finalizarAguardar();
+            divMensagem.innerHTML = mensagem
+            return false;
         }
 
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: email,
+                senhaServer: senha
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    window.location = "./perfil.html";
+                });
+
+            } else {
+
+                audioNaoValidado.play()
+                mensagem = `<p>*Login inválido! Tente Novamente.*</p>`
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
         divMensagem.innerHTML = mensagem
+
+        return false;
     }
 </script>
