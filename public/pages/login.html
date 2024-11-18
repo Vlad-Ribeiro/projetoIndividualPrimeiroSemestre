@@ -88,13 +88,12 @@
 
                 audioNaoValidado.play()
                 mensagem = `<p>*Login inválido! Tente Novamente.*</p>`
+                divMensagem.innerHTML = mensagem
             }
 
         }).catch(function (erro) {
             console.log(erro);
         })
-
-        divMensagem.innerHTML = mensagem
 
         return false;
     }
