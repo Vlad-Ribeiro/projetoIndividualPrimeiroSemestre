@@ -13,25 +13,32 @@
     <link rel="shortcut icon" type="imagex/png" href="../img/imgSimbolo.ico">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="../js/sessao.js"></script>
 </head>
-<body onload="onloadEsconder()">
+<body onload="onloadEsconder(), validarSessao()">
     <section class="menuFixo">
         <div class="perfil">
             <img src="" alt="">
-            <p>Vlad Ribeiro</p>
+            <p id="b_usuario">Vlad Ribeiro</p>
         </div>
         <div class="navbar">
             <ul>
-                <a href="#main"><li>Quiz</li></a>
+                <a href="#formulario"><li>Formulário</li></a>
+                <a href="#quiz"><li>Quiz</li></a>
                 <a href="#graficos"><li>Gráficos Gerais</li></a>
                 <a href="#discussoes"><li>Discussões</li></a>
             </ul>
         </div>
         <div>
-            <button onclick="sair()">LOGOUT</button>
+            <button onclick="limparSessao()">LOGOUT</button>
         </div>
     </section>
     <main id="main">
+        <section id="formulario">
+            <h2>Formulário</h2>
+        </section>
+
         <section id="quiz">
             <h2>Quiz</h2>
             <div class="perguntasRespostas">
@@ -116,11 +123,3 @@
     <script src="./scripts/perfilGráficos.js"></script>
 </body>
 </html>
-<script>
-    // Menu fixo
-
-    function sair() {
-        window.location = '../index.html'
-    }
-    
-</script>

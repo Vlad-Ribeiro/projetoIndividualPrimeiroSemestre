@@ -4,6 +4,7 @@
     margin: 0px;
     padding: 0px;
     scroll-behavior: smooth;
+    scroll-padding-top: 30px;
 }
 
 body {
