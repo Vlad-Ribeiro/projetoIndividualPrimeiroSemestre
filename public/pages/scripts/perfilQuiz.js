@@ -41,6 +41,8 @@
     let quantidadeDeQuestoes = listaDeQuestoes.length
     let isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
 
+    // document.getElementById('btnEnviar').disabled = 'true'
+
     function enviar() {
         var fkUsuario = sessionStorage.ID_USUARIO
         
@@ -75,7 +77,6 @@
         document.getElementById('pontuacao').style.display = "flex"
         document.getElementById('jogo').style.display = "flex"
         document.getElementById('btnIniciarQuiz').style.display = "none"
-        document.getElementById('btnEnviar').disabled = 'true'
 
         document.getElementById('qtdQuestoes').innerHTML = quantidadeDeQuestoes
 
@@ -85,8 +86,9 @@
 
         btnSubmeter.disabled = false
         btnProx.disabled = true
-        btnConcluir.disabled = true
-        btnTentarNovamente.disabled = true
+        // btnConcluir.disabled = true
+        // btnTentarNovamente.disabled = true
+        document.getElementById('btnEnviar').disabled = 'true'
     }
 
     function preencherHTMLcomQuestaoAtual(index) {
@@ -149,7 +151,6 @@
             preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
         } else {
             finalizarJogo()
-            document.getElementById('btnEnviar').disabled = 'false'
         }
         limparCoresBackgroundOpcoes()
     }
@@ -234,7 +235,7 @@
 
         btnProx.disabled = true
         btnSubmeter.disabled = true
-        btnConcluir.disabled = true
-        btnTentarNovamente.disabled = false
-
+        // btnConcluir.disabled = true
+        // btnTentarNovamente.disabled = false
+        document.getElementById('btnEnviar').disabled = false
     }
