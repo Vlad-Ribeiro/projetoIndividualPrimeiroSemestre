@@ -19,7 +19,7 @@
 <body onload="onloadEsconder(), validarSessao()">
     <section class="menuFixo">
         <div class="perfil">
-            <img src="" alt="">
+            <img src="../img/iconeUsuario.png" alt="">
             <p id="b_usuario">Vlad Ribeiro</p>
         </div>
         <div class="navbar">
@@ -27,7 +27,7 @@
                 <a href="#formulario"><li>Formulário</li></a>
                 <a href="#quiz"><li>Quiz</li></a>
                 <a href="#graficos"><li>Gráficos Gerais</li></a>
-                <a href="#discussoes"><li>Discussões</li></a>
+                <a href="#discussoes"><li>Fórum</li></a>
             </ul>
         </div>
         <div>
@@ -91,12 +91,14 @@
                                 <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
                             </span>
                         </div>
-            
+
+                        <div id="divStatus">
+
+                        </div>
                         <div id="botoes" class="flex-colunar padding-8">
                             <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
                             <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
-                            <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
-                            <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
+                            <button onclick="enviar()" id="btnEnviar">Enviar Resposta</button>
                         </div>
             
                     </div>
@@ -115,7 +117,7 @@
         </section>
 
         <section id="discussoes">
-            <h2>Discussões</h2>
+            <h2>Fórum</h2>
         </section>
     </main>
 

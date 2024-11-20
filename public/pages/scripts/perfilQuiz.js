@@ -31,7 +31,8 @@
 
     ]
 
-    // variáveis globais    
+    // variáveis globais 
+    var idQuiz = 0   
     let numeroDaQuestaoAtual = 0
     let pontuacaoFinal = 0
     let tentativaIncorreta = 0
@@ -39,6 +40,31 @@
     let erradas = 0
     let quantidadeDeQuestoes = listaDeQuestoes.length
     let isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
+
+    function enviar() {
+        var fkUsuario = sessionStorage.ID_USUARIO
+        
+        fetch("/quiz/enviar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkUsuario: sessionStorage.ID_USUARIO,
+                fkQuiz: idQuiz,
+                qtdAcertos: certas
+            }),
+        }). then(function(resposta) {
+            console.log("resposta: ", resposta);
+            if(resposta.ok) {
+                divStatus.innerHTML = `Resposta enviada! *Está página será recarregada*`
+            }
+        })
+
+        setTimeout(() => {
+            window.location.reload()
+        }, "3000");
+    }
 
     function onloadEsconder() {
         document.getElementById('pontuacao').style.display = "none"
@@ -49,8 +75,11 @@
         document.getElementById('pontuacao').style.display = "flex"
         document.getElementById('jogo').style.display = "flex"
         document.getElementById('btnIniciarQuiz').style.display = "none"
+        document.getElementById('btnEnviar').disabled = 'true'
 
         document.getElementById('qtdQuestoes').innerHTML = quantidadeDeQuestoes
+
+        idQuiz = 1
 
         preencherHTMLcomQuestaoAtual(0)
 
@@ -110,6 +139,7 @@
     function avancar() {
         btnProx.disabled = true
         btnSubmeter.disabled = false
+        document.getElementById('btnEnviar')
 
         desmarcarRadioButtons()
 
@@ -119,13 +149,9 @@
             preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
         } else {
             finalizarJogo()
+            document.getElementById('btnEnviar').disabled = 'false'
         }
         limparCoresBackgroundOpcoes()
-    }
-
-    function tentarNovamente() {
-        // atualiza a página
-        window.location.reload()
     }
 
     function checarResposta() {
