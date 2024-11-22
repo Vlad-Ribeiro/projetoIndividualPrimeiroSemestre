@@ -1,10 +1,10 @@
 var express = require("express");
 var router = express.Router();
 
-var quizController = require("../controllers/quizController")
+var formController = require("../controllers/formController")
 
 router.post("/enviar", function(req, res) {
-    quizController.enviar(req, res)
+    formController.enviar(req, res)
 })
 
 module.exports = router;

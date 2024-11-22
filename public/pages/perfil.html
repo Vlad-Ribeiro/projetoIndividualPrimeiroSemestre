@@ -16,18 +16,18 @@
 
     <script src="../js/sessao.js"></script>
 </head>
-<body onload="onloadEsconder(), validarSessao()">
+<body onload="validarSessao()">
     <section class="menuFixo">
         <div class="perfil">
             <img src="../img/iconeUsuario.png" alt="">
-            <p id="b_usuario">Vlad Ribeiro</p>
+            <p id="nome">Vlad Ribeiro</p>
         </div>
         <div class="navbar">
             <ul>
                 <a href="#formulario"><li>Formulário</li></a>
                 <a href="#quiz"><li>Quiz</li></a>
                 <a href="#graficos"><li>Gráficos Gerais</li></a>
-                <a href="#discussoes"><li>Fórum</li></a>
+                <a href="#forum"><li>Fórum</li></a>
             </ul>
         </div>
         <div>
@@ -37,91 +37,113 @@
     <main id="main">
         <section id="formulario">
             <h2>Formulário</h2>
+            <div>
+                <form>
+                    Selecione seu livro favorito do Tolkien:
+                    <select name="" id="slcLivro">
+                        <option value="O Silmarilion">O Silmarilion</option>
+                        <option value="O Hobbit">O Hobbit</option>
+                        <option value="O Senhor dos Anéis - A Sociedade do Anel">O Senhor dos Anéis - A Sociedade do Anel</option>
+                        <option value="O Senhor dos Anéis - As Duas Torres">O Senhor dos Anéis - As Duas Torres</option>
+                        <option value="O Senhor dos Anéis - O Retorno do Rei" selected>O Senhor dos Anéis - O Retorno do Rei</option>
+                    </select>
+                    Selecione seu personagem favorito da Comitiva do Anel: 
+                    <select name="" id="slcPersonagem">
+                        <option value="Frodo">Frodo</option>
+                        <option value="Sam">Sam</option>
+                        <option value="Pippin">Pippin</option>
+                        <option value="Merry">Merry</option>
+                        <option value="Gandalf" selected>Gandalf</option>
+                        <option value="Aragorn">Aragorn</option>
+                        <option value="Gimli">Gimli</option>
+                        <option value="Legolas">Legolas</option>
+                        <option value="Boromir">Boromir</option>
+                    </select>
+                    Entre as raças de O Senhor dos Anéis, qual sua favorita?
+                    <select name="" id="slcRaca">
+                        <option value="Elfos">Elfos</option>
+                        <option value="Anãos" selected>Anãos</option>
+                        <option value="Humanos">Humanos</option>
+                        <option value="Hobbits">Hobbits</option>
+                        <option value="Ents">Ents</option>
+                        <option value="Orcs">Orcs</option>
+                    </select>
+                    Escreva por que você gosta do universo do Tolkien: <textarea name="" id="iptDescricao"></textarea>
+                    <button type="button" onclick="enviar()">Enviar</button>
+                    <div id="divStatus"></div>
+                </form>
+            </div>
         </section>
 
         <section id="quiz">
             <h2>Quiz</h2>
-            <div class="perguntasRespostas">
-                <div id="pontuacaoEJogo">
-                    <button id="btnIniciarQuiz" onclick="iniciarQuiz()">Iniciar Quiz</button>
-            
-                    <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
-                        <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
-                            <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
-                            <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
-                        </div>
-                        <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
-                            <span id="pontuacaoFinal" class="width-fit-content">Pontuação Final:
-                                <span id="spanPontuacaoFinal">***</span>
-                            </span>
-                            <span id="msgFinal" class="width-fit-content">***</span>
-                        </div>
-                    </div>
-            
-                    <div id="jogo" class="width-fit-content flex-colunar border-secondary">
-            
-                        <div id="infoQuestao" class="padding-8">
-                            <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span id="qtdQuestoes"></span>
-                                questões.</span>
-                        </div>
-            
-                        <div id="perguntaDaQuestaoAtual" class="padding-8">
-                            <span id="spanQuestaoExibida" class="text-bold"></span>
-                        </div>
-            
-                        <div id="infoAlternativas" class="padding-8">
-                            <span><em>Escolha uma opção dentre as abaixo:</em></span>
-                        </div>
-            
-                        <div id="opcoes" class="flex-colunar padding-8">
-                            <span>
-                                <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
-                                <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
-                            </span>
-                            <span>
-                                <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
-                                <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
-                            </span>
-                            <span>
-                                <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
-                                <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
-                            </span>
-                            <span>
-                                <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
-                                <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
-                            </span>
-                        </div>
 
-                        <div id="divStatus">
-
-                        </div>
-                        <div id="botoes" class="flex-colunar padding-8">
-                            <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
-                            <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
-                            <button onclick="enviar()" id="btnEnviar">Enviar Resposta</button>
-                        </div>
-            
-                    </div>
-                </div>
+            <div>
+                <h1>Em Produção</h1>
             </div>
         </section>
 
         <section id="graficos">
             <h2>Gráficos Gerais</h2>
             <div class="divGraficos">
-                <div>
-                    <canvas id="myChart"></canvas>
+                <div class="secundario">
+                    <div class="divKpi">
+                        <div class="kpi">
+
+                        </div>
+                        <div class="kpi">
+
+                        </div>
+                    </div>
+                    <div class="grafico">
+                        <h3>Livros</h3>
+                        <canvas id="chartLivro"></canvas>
+                    </div>
                 </div>
                 
+                <div class="secundario">
+                    <div class="divKpi">
+                        <div class="kpi">
+                            <b>+ Popular: 50%</b>
+                        </div>
+                        <div class="kpi">
+                            <b>- Popular: 15%</b>
+                        </div>
+                    </div>
+                    <div class="grafico">
+                        <h3>Personagens</h3>
+                        <canvas id="chartPersonagem"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="divGraficos">
+                <div class="secundario">
+                    <div class="divKpi">
+                        <div class="kpi">
+                            <b>+ Popular: 50%</b>
+                        </div>
+                        <div class="kpi">
+                            <b>- Popular: 15%</b>
+                        </div>
+                    </div>
+                    <div class="grafico">
+                        <h3>Raças</h3>
+                        <canvas id="chartRacas"></canvas>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="discussoes">
+        <section id="forum">
             <h2>Fórum</h2>
+
+            <div>
+                <h1>Em Produção</h1>
+            </div>
         </section>
     </main>
 
-    <script src="./scripts/perfilQuiz.js"></script>
+    <script src="./scripts/perfilForm.js"></script>
     <script src="./scripts/perfilGráficos.js"></script>
 </body>
 </html>
