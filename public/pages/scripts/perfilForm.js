@@ -3,7 +3,6 @@ function enviar() {
     var raca = slcRaca.value
     var livro = slcLivro.value
     var txtDescricao = iptDescricao.value
-
     
     fetch("/form/enviar", {
         method: "POST",
@@ -21,10 +20,11 @@ function enviar() {
         console.log("resposta: ", resposta);
         if(resposta.ok) {
             divStatus.innerHTML = `Resposta enviada! *Está página será recarregada*`
+            setTimeout(() => {
+                window.location.reload()
+            }, "3000");
+        } else {
+            divStatus.innerHTML = `Algo deu errado :(`
         }
     })
-
-    setTimeout(() => {
-        window.location.reload()
-    }, "3000");
 }

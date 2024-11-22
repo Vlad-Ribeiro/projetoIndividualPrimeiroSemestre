@@ -1,4 +1,3 @@
-const { response } = require('express');
 var formModel = require('../models/formModel');
 
 function enviar(req, res) {
@@ -8,13 +7,13 @@ function enviar(req, res) {
     var descricao = req.body.descricao;
     var livroFav = req.body.livroFav;
 
-    formModel.enviar(idUserForm, personagemFav, racaFav, descricao, livroFav).then(function(resposta){
+    formModel.enviar(idUserForm, personagemFav, racaFav, descricao, livroFav).then(function(resultado){
         res.status(200).send('Arquivado com sucesso');
+        res.json(resultado)
         
-        console.log(resposta)
     }).catch(function(erro){
         res.status(500).json(erro.slqMessage);
-        console.log(resposta)
+        console.log(erro)
     })
 }
 
