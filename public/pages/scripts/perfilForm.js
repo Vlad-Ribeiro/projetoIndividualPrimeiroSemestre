@@ -1,7 +1,7 @@
 function enviar() {
-    var personagem = slcPersonagem.value
-    var raca = slcRaca.value
-    var livro = slcLivro.value
+    var personagem = Number(slcPersonagem.value)
+    var raca = Number(slcRaca.value)
+    var livro = Number(slcLivro.value)
     var txtDescricao = iptDescricao.value
     
     fetch("/form/enviar", {
@@ -24,7 +24,11 @@ function enviar() {
                 window.location.reload()
             }, "3000");
         } else {
-            divStatus.innerHTML = `Algo deu errado :(`
+            divStatus.innerHTML = `Você já respondeu esse formulário.`
+
+            setTimeout(() => {
+                divStatus.innerHTML = ``
+            }, "3000");
         }
     })
 }

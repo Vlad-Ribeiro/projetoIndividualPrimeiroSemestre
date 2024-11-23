@@ -7,7 +7,7 @@ function enviar(req, res) {
     var descricao = req.body.descricao;
     var livroFav = req.body.livroFav;
 
-    formModel.enviar(idUserForm, personagemFav, racaFav, descricao, livroFav).then(function(resultado){
+    formModel.enviar(idUserForm, personagemFav, racaFav, livroFav, descricao).then(function(resultado){
         res.status(200).send('Arquivado com sucesso');
         res.json(resultado)
         
