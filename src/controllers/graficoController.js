@@ -26,7 +26,7 @@ function coleta(res) {
     // var raca6 = req.params.raca6;
 
 
-    graficoModel.coleta()
+    graficoModel.coleta(personagemFav)
     .then(function(resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
