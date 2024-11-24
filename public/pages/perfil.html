@@ -16,7 +16,7 @@
 
     <script src="../js/sessao.js"></script>
 </head>
-<body onload="validarSessao()">
+<body onload="validarSessao(), dadosGraficoPersonagem(), dadosGraficoLivro(), dadosGraficoRaca()">
     <section class="menuFixo">
         <div class="perfil">
             <img src="../img/iconeUsuario.png" alt="">
@@ -89,10 +89,10 @@
                 <div class="secundario">
                     <div class="divKpi">
                         <div class="kpi">
-
+                            <b id="livroMaisPopular"></b>
                         </div>
                         <div class="kpi">
-
+                            <b id="livroMenosPopular"></b>
                         </div>
                     </div>
                     <div class="grafico">
@@ -104,10 +104,10 @@
                 <div class="secundario">
                     <div class="divKpi">
                         <div class="kpi">
-                            <b>+ Popular: 50%</b>
+                            <b id="personagemMaisPopular"></b>
                         </div>
                         <div class="kpi">
-                            <b>- Popular: 15%</b>
+                            <b id="personagemMenosPopular"></b>
                         </div>
                     </div>
                     <div class="grafico">
@@ -120,10 +120,10 @@
                 <div class="secundario">
                     <div class="divKpi">
                         <div class="kpi">
-                            <b>+ Popular: 50%</b>
+                            <b id="racaMaisPopular"></b>
                         </div>
                         <div class="kpi">
-                            <b>- Popular: 15%</b>
+                            <b id="racaMenosPopular"></b>
                         </div>
                     </div>
                     <div class="grafico">
