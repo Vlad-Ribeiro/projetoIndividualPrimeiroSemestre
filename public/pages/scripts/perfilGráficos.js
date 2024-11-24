@@ -27,7 +27,7 @@
         let dados = {
             labels: labels,
             datasets: [{
-                label: 'personagens',
+                label: 'Personagens',
                 data: resposta,
                 fill: true,
                 borderColor: 'rgb(75, 192, 192)',
@@ -184,7 +184,7 @@
 
     function dadosGraficoRaca() {
 
-        fetch(`/livro/coletaLivro`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/raca/coletaRaca`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -209,7 +209,7 @@
         let dados = {
             labels: labels,
             datasets: [{
-                label: 'Livros',
+                label: 'Raças',
                 data: resposta,
                 fill: true,
                 borderColor: 'rgb(75, 192, 192)',
