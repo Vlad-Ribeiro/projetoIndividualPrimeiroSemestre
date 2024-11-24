@@ -113,7 +113,7 @@
 
         console.log('iniciando plotagem do gráfico...');
 
-        let labels = ['O Silmarilion', 'O Hobbit', 'A Sociedade do Anel', 'As Duas Torres', 'O Retorno do Rei'];
+        let labels = ['O Silmarillion', 'O Hobbit', 'A Sociedade do Anel', 'As Duas Torres', 'O Retorno do Rei'];
 
         let dados = {
             labels: labels,
