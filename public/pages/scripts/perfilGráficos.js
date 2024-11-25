@@ -84,8 +84,8 @@
         var contaMaisPopular = maior/totalResposta * 100
         var contaMenosPopular = menor/totalResposta * 100
         
-        maisPopular.innerHTML = `+ Popular: ${contaMaisPopular}%`
-        menosPopular.innerHTML = `- Popular: ${contaMenosPopular}%`
+        maisPopular.innerHTML = `+ Popular: ${contaMaisPopular.toFixed(1)}%`
+        menosPopular.innerHTML = `- Popular: ${contaMenosPopular.toFixed(1)}%`
     }
 
 
@@ -175,8 +175,8 @@
         var contaMaisPopular = maior/totalResposta * 100
         var contaMenosPopular = menor/totalResposta * 100
         
-        maisPopular.innerHTML = `+ Popular: ${contaMaisPopular}%`
-        menosPopular.innerHTML = `- Popular: ${contaMenosPopular}%`
+        maisPopular.innerHTML = `+ Popular: ${contaMaisPopular.toFixed(1)}%`
+        menosPopular.innerHTML = `- Popular: ${contaMenosPopular.toFixed(1)}%`
     }
 
     
@@ -266,6 +266,6 @@
         var contaMaisPopular = maior/totalResposta * 100
         var contaMenosPopular = menor/totalResposta * 100
         
-        maisPopular.innerHTML = `+ Popular: ${contaMaisPopular}%`
-        menosPopular.innerHTML = `- Popular: ${contaMenosPopular}%`
+        maisPopular.innerHTML = `+ Popular: ${contaMaisPopular.toFixed(1)}%`
+        menosPopular.innerHTML = `- Popular: ${contaMenosPopular.toFixed(1)}%`
     }
